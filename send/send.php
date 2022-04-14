@@ -1,0 +1,46 @@
+<?php 
+
+$modal_form_name = $_POST['modal_form_name'];
+$phone = $_POST['phone'];
+$auto = $_POST['auto'];
+
+
+$to = "chehol21eco@yandex.ru";
+
+$subject = 'Новая заявка с сайта ' . $site;
+$message = "Форма - $modal_form_name
+Телефон - $phone
+Авто - $auto";
+$headers = 'From: webmaster@' . $site . "\r\n" .
+    'Reply-To: webmaster@' . $site . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
+
+?> 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<meta name='robots' content='noindex,follow' />
+	<title>Ваш заказ принят!</title>
+	<link rel="stylesheet" href="cssl/style.css" />
+	<style>
+		#senks_block {color: #313E47;text-align: center;position: fixed;top: 10%;width: 100%;}
+		#senks_block img {width: 185px;margin-bottom: 10px;}
+		#senks_block h1 {font-size: 36px;font-weight: 700;text-transform: uppercase;color: rgba(9, 14, 100, 0.7);}
+		.senks_text {line-height: 1.2;font-size: 18px;margin: 25px auto;}
+		.senks_red {color: #fff;font-size: 19px;font-weight: bold;background: rgba(9, 14, 100, 0.7);height: 45px;line-height: 45px;}
+	</style>
+ 
+</head>
+<body style="background-size: 100% 100%;">
+	<div id="senks_block">
+		<img src="index.png" alt="">
+		<h1>Ваш заказ принят!</h1>
+		<p class='senks_text'>В рабочее время (09:00 - 21:00) ожидайте звонок от нашего оператора для подтверждения заказа.<br><br>Пожалуйста, проконтролируйте чтобы ваш контактный телефон <b>"<?=$phone?>"</b> был включен.</p>
+		<p class='senks_red'>Пожалуйста, дождитесь звонка от оператора</p>
+	</div>
+</body>
+</html>

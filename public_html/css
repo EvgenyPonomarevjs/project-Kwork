@@ -1,0 +1,6 @@
+﻿@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 400;
+  src: url(s/cuprum/v18/dg45_pLmvrkcOkBnKsOzXyGWTBcmg-X6VjvYIg.ttf) format('truetype');
+}
